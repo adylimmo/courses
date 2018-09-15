@@ -10,14 +10,32 @@
 <body>
     <div class="container">
         <div class="row">
+                {{--  {{dd($data->first()->toArray())}}  --}}
+                <h3>Artikel</h3>
             <table class="table table-bordered">
                 <tr>
-                    <th>Title</th>
-                    <th>Desc</th>
+                    @foreach($data->first()->toArray() as $key => $item)
+                    <th>{{$key}}</th>
+                    @endforeach
+                    <th>Aksi</th>
                 </tr>
+                @php($idx = 0)
+                @foreach($data as $item)
+                {{--  {{dump($data)}}  --}}
                 <tr>
-                    <td colspan="2">Data . . . </td>
+                    @foreach($item->toArray() as $value)
+                    @php($idx++)
+                    <td>{{$value}}</td>
+                    @if($idx == count($item->toArray()))
+                    <td>
+                            <a href="{{url('article/'.$item->id.'/edit')}}" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                            <a href="{{url('article/'.$item->id.'/hapus')}}" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</a>
+                    </td>
+                    @endif
+                    @endforeach
                 </tr>
+                @php($idx = 0)
+                @endforeach
             </table>
         </div>
     </div>
