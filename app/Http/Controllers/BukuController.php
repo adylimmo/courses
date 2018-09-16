@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 class BukuController extends Controller
 {
     public function index(){
-        return view('kas.home');
+        $datakas = \App\KasModel::all();
+        $jumlah = \App\KasModel::all()->sum('nominal');
+
+        return view('kas.home')
+        ->with('data', $datakas)
+        ->with('jumlah', $jumlah);
     }
     public function beranda(){
         return view('kas.beranda');

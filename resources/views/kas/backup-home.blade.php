@@ -10,7 +10,6 @@
 <body>
     <div class="container">
         <div class="row">
-                
             {{-- {{dump($data)}} --}}
             <h3>Buku Kas Oktober</h3>
                 {{--  {{dd($data->first()->toArray())}}  --}}
@@ -18,28 +17,41 @@
                 <div class="table-responsive">
             <table class="table table-bordered">
                 <tr>
-                        @foreach($data->first()->toArray() as $key => $item)
-                        <th>{{$key}}</th>
-                        @endforeach
-                        <th>Aksi</th>
+                    <th>No</th>
+                    <th>Nominal</th>
+                    <th>Jenis</th>
+                    <th>Keterangan</th>
+                    <th>Hari / Tanggal</th>
+                    <th>Aksi</th>
                 </tr>
                 {{--  {{dump($data)}}  --}}
-                @foreach($data as $item)
                 <tr class="info">
-                        @foreach($item->toArray() as $value)
-                        <td>{{$value}}</td>
-                    @endforeach
+                    <td>1</td>
+                    <td>Rp. 200.000</td>
+                    <td>Pemasukan</td>
+                    <td>Gaji Kantor</td>
+                    <td>Senin, 12 Oktober 2018</td>
                     <td>
                             <a href="{{url('edit-buku-kas')}}" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
                             <a href="" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</a>
                     </td>
                 </tr>
-                @endforeach
+                <tr class="warning">
+                    <td>2</td>
+                    <td>Rp. 50.000</td>
+                    <td>Pengeluaran</td>
+                    <td>Jajan mie ayam</td>
+                    <td>Rabu, 17 Oktober 2018</td>
+                    <td>
+                            <a href="{{url('edit-buku-kas')}}" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                            <a href="" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i> Hapus</a>
+                    </td>
+                </tr>
                 <th>Total</th>
-                <th>Rp. {{$jumlah}}</th>
+                <th>Rp. 150.000</th>
                 <th>2 Transaksi</th>
                 <th>2 Keterangan</th>
-                <th colspan="3"> Periode 12 Oktober 2018 s/d 17 Oktober 2018</th>
+                <th colspan="2"> Periode 12 Oktober 2018 s/d 17 Oktober 2018</th>
             </table>
             <a href="{{url('beranda-buku-kas')}}" class="btn btn-sm btn-info">Beranda</a>
                 </div>
