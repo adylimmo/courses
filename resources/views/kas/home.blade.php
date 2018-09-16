@@ -37,8 +37,8 @@
                 @endforeach
                 <th>Total</th>
                 <th>Rp. {{$jumlah}}</th>
-                <th>2 Transaksi</th>
-                <th>2 Keterangan</th>
+                <th>{{$totallist}} Transaksi</th>
+                <th>{{$totallist}} Keterangan</th>
                 <th colspan="3"> Periode 12 Oktober 2018 s/d 17 Oktober 2018</th>
             </table>
             <a href="{{url('beranda-buku-kas')}}" class="btn btn-sm btn-info">Beranda</a>
