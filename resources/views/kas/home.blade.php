@@ -18,14 +18,20 @@
                 <div class="table-responsive">
             <table class="table table-bordered">
                 <tr>
-                        @foreach($data->first()->toArray() as $key => $item)
-                        <th>{{$key}}</th>
-                        @endforeach
-                        <th>Aksi</th>
+                       <th>No.</th>
+                       <th>Nominal</th>
+                       <th>Jenis</th>
+                       <th>Pengeluaran</th>
+                       <th>Hari, Tanggal</th>
+                       <th>Aksi</th>
                 </tr>
                 {{--  {{dump($data)}}  --}}
                 @foreach($data as $item)
+                @if($item->jenis == 0)
                 <tr class="info">
+                    @else
+                <tr class="danger">
+                @endif
                         @foreach($item->toArray() as $value)
                         <td>{{$value}}</td>
                     @endforeach
